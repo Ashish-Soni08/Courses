@@ -1,20 +1,32 @@
-# Text Summarization App
+# Bean Plant Health Predictor
 
-This application provides a simple interface to summarize text using a pre-trained model from Hugging Face's Transformers library. The model used under the hood is `DISTILBART-12-6-CNN`, a distilled version of BART fine-tuned on the CNN/Daily Mail dataset.
+This application is designed to help farmers quickly identify the health of bean plants by analyzing images of their leaves. The app uses a Vision Transformer (ViT) model to classify images into three categories: Angular Leaf Spot, Bean Rust, and Healthy. This tool can be deployed on a drone for real-time monitoring of crops, enabling timely treatment of diseased plants.
+
+## Use Case
+
+Farmers need to monitor the health of their bean plants regularly to prevent the spread of diseases. This app provides a machine learning-based solution to automate the identification of plant diseases, which can be particularly useful when integrated with drone technology.
 
 ## Features
-- **Text Summarization**: Generate concise summaries of input text.
-- **User-Friendly Interface**: Built using Gradio for an easy-to-use web interface.
+- **Image Classification**: Upload an image of a bean leaf, and the app will classify it into one of the following categories:
+  - Angular Leaf Spot
+  - Bean Rust
+  - Healthy
 
-## Model
-- **Model Used**: `DISTILBART-12-6-CNN`
-- **Framework**: Hugging Face Transformers
+## Model Details
+- **Model Used**: Vision Transformer (ViT) - base-sized model fine-tuned on the Beans dataset.
+- **Image Processor**: The app uses the `ViTImageProcessor` for preparing images before classification.
+- **Labels**: The possible outcomes are `angular_leaf_spot`, `bean_rust`, and `healthy`.
 
-## Software Packages
+## How to Use
+1. **Upload an Image**: Click on the image input field and upload a photo of a bean leaf.
+2. **Get Results**: The app will classify the image and display the probabilities for each category.
+3. **Interpret the Results**: The app shows the confidence levels for each label, helping farmers identify whether the plant is healthy or requires treatment.
 
-- **Gradio**: Used to create the web interface.
-- **Transformers**: Used for model inference.
-- **Spaces**: Utilized for GPU acceleration during model execution.
+## Technology Stack
+
+- **Gradio**: Used to create the user interface.
+- **PyTorch**: Utilized for running the model inference.
+- **Hugging Face Transformers**: Provides the pre-trained Vision Transformer model.
 
 ## How to Install and Use the App Locally
 
