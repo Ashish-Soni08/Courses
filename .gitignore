@@ -1,5 +1,6 @@
 
 Uplimit/LLM_Apps_with_Langchain/.env
+.env
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
